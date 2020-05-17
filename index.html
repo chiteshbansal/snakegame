@@ -4,9 +4,6 @@
 	<title>Snake Game</title>
 	<link rel="stylesheet" type="text/css" href="prac.css">
 	<script src="https://kit.fontawesome.com/ea1f5478aa.js" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
 </head>
 <body >
 	<h1><div><img src = "images/animals.png" width="50px" height="50"></div>Snake Game </h1>
@@ -14,6 +11,10 @@
 		<canvas id="snake" height="608" width="608"></canvas>
 		<div id="gameover"><button type="submit" onclick="location.reload()"><i class="far fa-sad-tear"></i>Start Again</button></div>
 		</section>
+		<div class="btncontainer">
+			<button type="submit"  id ='mazebutton'class="rotate1" onclick="changeMaze();">Change maze</button>
+			<button type="submit"  id ='snakeheadcolor'class="color1" onclick="changecolor();">Change snake color</button>
+		<div>
 	<script type="text/javascript" src="snake.js"></script>
 </body>
 
