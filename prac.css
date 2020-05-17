@@ -26,6 +26,7 @@ h1 div{
 section{
 	width: 40%;
 	margin: 30px auto;
+	margin-bottom: 0;
 	display: flex;
 	position: relative;
 	flex-direction: column;
@@ -83,3 +84,24 @@ section div button i{
 		width: 100%;
 	}
 }
+
+.btncontainer{
+	width: 40%;
+	display: flex;
+	flex-direction: row;
+	margin:0 auto;
+
+	justify-content: center;
+	text-align: center;
+}
+
+.btncontainer button{
+	padding: 1rem;
+	background-color: black;
+	color: white;
+	font-family: cursive;
+	font-size: 2rem;
+}
+
+
+
