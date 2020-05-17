@@ -1,0 +1,85 @@
+#canvas{
+	display: inline-block;
+	margin: 80px auto;
+	background-color: green;
+	border:1px solid black;
+	position: absolute;
+	left: 30%;
+	top: 25%;
+}
+
+body{
+	background-image: linear-gradient(to right,darkgreen , yellowgreen , lightgreen, green , yellow, white);
+}
+
+h1{
+	color: white;
+	text-align: center;
+	font-family: cursive;
+	margin-bottom: 0;
+}
+h1 div{
+	display: inline-block;
+	padding-right: .5rem;
+	margin-bottom: 0;
+}
+section{
+	width: 40%;
+	margin: 30px auto;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	transition: .4s ease-in-out;
+	font-size: 3rem;
+	text-align: center;
+	font-family: cursive;
+	border:2px solid white;
+}
+section div{
+	display: none;
+	position: absolute;
+	color: black;
+	text-align: center;
+	left: 10%;
+}
+
+
+section div button{
+	padding: 1rem;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-family: cursive;
+	font-size: 2rem;
+}
+
+section div button i{
+	color: white;
+	font-size: 2rem;
+	padding: .2rem;
+}
+
+@media screen and (max-width: 1100px)
+{
+	section{
+		width: 60%;
+	}
+}
+
+
+@media screen and (max-width: 800px)
+{
+	section{
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	section{
+		width: 100%;
+	}
+}
