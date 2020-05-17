@@ -85,7 +85,7 @@ maze[40]={x:16*box,y:(3+3)*box}
 function changeMaze()
 {
 	let btn = document.getElementById('mazebutton');
-	if(btn.className==="rotate1")
+	if(btn.className==="rotate1" && gamestatus!=0)
 	{
 		maze[0]={x:2*box,y:(3+3)*box}
 		maze[1]={x:2*box,y:(2+3)*box}
@@ -129,9 +129,9 @@ function changeMaze()
 		maze[39]={x:10*box,y:(10+3)*box}
 		maze[40]={x:4*box,y:(13+3)*box}
 		btn.className='rotate2';
-	}else if (btn.className==='rotate2')
+	}else if (btn.className==='rotate2' && gamestatus!=0)
 	{	
-		maze[0]={x:1*box,y:(0+3)*box}
+		maze[0]={x:1*box,y:(1+3)*box}
 		maze[1]={x:2*box,y:(1+3)*box}
 		maze[2]={x:3*box,y:(2+3)*box}
 		maze[3]={x:3*box,y:(3+3)*box}
@@ -139,7 +139,7 @@ function changeMaze()
 		maze[5]={x:4*box,y:(2+3)*box}
 		maze[6]={x:5*box,y:(2+3)*box}
 		maze[7]={x:6*box,y:(2+3)*box}
-		maze[8]={x:17*box,y:(0+3)*box}
+		maze[8]={x:16*box,y:(1+3)*box}
 		maze[9]={x:16*box,y:(1+3)*box}
 		maze[10]={x:15*box,y:(2+3)*box}
 		maze[11]={x:14*box,y:(2+3)*box}
@@ -174,7 +174,7 @@ function changeMaze()
 		maze[40]={x:1*box,y:(0+3)*box}
 		btn.className="rotate3";
 
-	}else if(btn.className==='rotate3')
+	}else if(btn.className==='rotate3' && gamestatus!=0)
 	{
 		for(i=0 ;i<=40;i++)
 		{
@@ -311,6 +311,8 @@ function collisionmaze(head,maze)
 	return false;
 }
 
+// just a variable to avoid maze change when the game is over
+let gamestatus =1 
 
 // draw everything on the screen
 
@@ -357,6 +359,7 @@ function draw(){
 
 	if(snakeX < box || snakeX > 17*box || snakeY<3*box || snakeY>17*box || collision(newhead,snake)||collisionmaze(newhead,maze))
 	{
+		gamestatus =0;
 		dead.play();
 		clearInterval(game);
 		gameover(score);
