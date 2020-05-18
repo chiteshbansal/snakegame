@@ -4,6 +4,11 @@ let container = document.getElementById('gameover');
 // Unit//
 const box = 32;
 
+//speed of the snake
+
+// speed of hte snake increase with the increase in score
+let speed = 0;
+
 // Image //
 
 const ground =new Image();
@@ -129,9 +134,52 @@ function changeMaze()
 		maze[39]={x:10*box,y:(10+3)*box}
 		maze[40]={x:4*box,y:(13+3)*box}
 		btn.className='rotate2';
-	}else if (btn.className==='rotate2' && gamestatus!=0)
-	{	
-		maze[0]={x:1*box,y:(1+3)*box}
+	}else if(btn.className==='rotate2' && gamestatus!=0) {
+		maze[0]={x:2*box,y:(3+3)*box}
+		maze[1]={x:3*box,y:(3+3)*box}
+		maze[2]={x:4*box,y:(3+3)*box}
+		maze[3]={x:4*box,y:(2+3)*box}
+		maze[4]={x:4*box,y:(1+3)*box}
+		maze[5]={x:14*box,y:(3+3)*box}
+		maze[6]={x:15*box,y:(3+3)*box}
+		maze[7]={x:14*box,y:(3+3)*box}
+		maze[8]={x:14*box,y:(2+3)*box}
+		maze[9]={x:14*box,y:(1+3)*box}
+		maze[10]={x:14*box,y:(11+3)*box}
+		maze[11]={x:15*box,y:(11+3)*box}
+		maze[12]={x:16*box,y:(11+3)*box}
+		maze[13]={x:14*box,y:(12+3)*box}
+		maze[14]={x:14*box,y:(13+3)*box}
+		maze[15]={x:2*box,y:(11+3)*box}
+		maze[16]={x:3*box,y:(11+3)*box}
+		maze[17]={x:4*box,y:(11+3)*box}
+		maze[18]={x:4*box,y:(12+3)*box}
+		maze[19]={x:4*box,y:(13+3)*box}
+		maze[20]={x:6*box,y:(4+3)*box}
+		maze[21]={x:6*box,y:(5+3)*box}
+		maze[22]={x:6*box,y:(6+3)*box}
+		maze[23]={x:6*box,y:(8+3)*box}
+		maze[24]={x:6*box,y:(9+3)*box}
+		maze[25]={x:6*box,y:(10+3)*box}
+		maze[26]={x:7*box,y:(10+3)*box}
+		maze[27]={x:8*box,y:(10+3)*box}
+		maze[28]={x:7*box,y:(4+3)*box}
+		maze[29]={x:8*box,y:(4+3)*box}
+		maze[30]={x:10*box,y:(4+3)*box}
+		maze[31]={x:11*box,y:(4+3)*box}
+		maze[32]={x:12*box,y:(4+3)*box}
+		maze[33]={x:12*box,y:(5+3)*box}
+		maze[34]={x:12*box,y:(6+3)*box}
+		maze[35]={x:12*box,y:(8+3)*box}
+		maze[36]={x:12*box,y:(9+3)*box}
+		maze[37]={x:12*box,y:(10+3)*box}
+		maze[38]={x:11*box,y:(10+3)*box}
+		maze[39]={x:10*box,y:(10+3)*box}
+		maze[40]={x:16*box,y:(3+3)*box}
+		btn.className='rotate3';
+		}else if (btn.className==='rotate3' && gamestatus!=0)
+		{
+		maze[0]={x:2*box,y:(1+3)*box}
 		maze[1]={x:2*box,y:(1+3)*box}
 		maze[2]={x:3*box,y:(2+3)*box}
 		maze[3]={x:3*box,y:(3+3)*box}
@@ -147,7 +195,7 @@ function changeMaze()
 		maze[13]={x:15*box,y:(3+3)*box}
 		maze[14]={x:15*box,y:(4+3)*box}
 		maze[15]={x:12*box,y:(2+3)*box}
-		maze[16]={x:1*box,y:(14+3)*box}
+		maze[16]={x:2*box,y:(13+3)*box}
 		maze[17]={x:2*box,y:(13+3)*box}
 		maze[18]={x:3*box,y:(12+3)*box}
 		maze[19]={x:3*box,y:(11+3)*box}
@@ -155,7 +203,7 @@ function changeMaze()
 		maze[21]={x:4*box,y:(12+3)*box}
 		maze[22]={x:5*box,y:(12+3)*box}
 		maze[23]={x:6*box,y:(12+3)*box}
-		maze[24]={x:17*box,y:(14+3)*box}
+		maze[24]={x:16*box,y:(13+3)*box}
 		maze[25]={x:16*box,y:(13+3)*box}
 		maze[26]={x:15*box,y:(12+3)*box}
 		maze[27]={x:15*box,y:(11+3)*box}
@@ -163,18 +211,18 @@ function changeMaze()
 		maze[29]={x:14*box,y:(12+3)*box}
 		maze[30]={x:13*box,y:(12+3)*box}
 		maze[31]={x:12*box,y:(12+3)*box}
-		maze[32]={x:1*box,y:(0+3)*box}
-		maze[33]={x:1*box,y:(0+3)*box}
-		maze[34]={x:1*box,y:(0+3)*box}
-		maze[35]={x:1*box,y:(0+3)*box}
-		maze[36]={x:1*box,y:(0+3)*box}
-		maze[37]={x:1*box,y:(0+3)*box}
-		maze[38]={x:1*box,y:(0+3)*box}
-		maze[39]={x:1*box,y:(0+3)*box}
-		maze[40]={x:1*box,y:(0+3)*box}
-		btn.className="rotate3";
+		maze[33]={x:2*box,y:(1+3)*box}
+		maze[34]={x:2*box,y:(1+3)*box}
+		maze[35]={x:2*box,y:(1+3)*box}
+		maze[36]={x:2*box,y:(1+3)*box}
+		maze[32]={x:2*box,y:(1+3)*box}
+		maze[37]={x:2*box,y:(1+3)*box}
+		maze[38]={x:2*box,y:(1+3)*box}
+		maze[39]={x:2*box,y:(1+3)*box}
+		maze[40]={x:2*box,y:(1+3)*box}
+		btn.className="rotate4";
 
-	}else if(btn.className==='rotate3' && gamestatus!=0)
+	}else if(btn.className==='rotate4' && gamestatus!=0)
 	{
 		for(i=0 ;i<=40;i++)
 		{
@@ -277,16 +325,135 @@ function direction(event){
 
 	}
 }
+// checking collison with the walls of the game 
+function wallcollision(dir)
+{
+	if(dir.x<box || dir.x>17*box || dir.y<3*box || dir.y>17*box)
+		return false;
+	else
+		return true;
+}
+// making the game autonomous 
+
+function autonomous(food,snakeX,snakeY)
+{
+	
+		let dir1 = {
+			x:snakeX-1*box,
+			y:snakeY
+		}
+		let dir2 = {
+			x:snakeX+1*box,
+			y:snakeY
+		}
+		let dir3 = {
+			x:snakeX,
+			y:snakeY+1*box
+		}
+		let dir4 = {
+			x:snakeX,
+			y:snakeY-box
+		}
+		let initialdis =Math.abs(food.x-snakeX)+Math.abs(food.y-snakeY);
+		let dis1 = (Math.abs(food.x-dir1.x)+Math.abs(food.y-dir1.y));
+		let dis2 = (Math.abs(food.x-dir2.x)+Math.abs(food.y-dir2.y));
+		let dis3 = (Math.abs(food.x-dir3.x)+Math.abs(food.y-dir3.y));
+		let dis4 = (Math.abs(food.x-dir4.x)+Math.abs(food.y-dir4.y));
+
+		if(dis1<initialdis && !collisionmaze(dir1,maze) && !collision(dir1,snake) && wallcollision(dir1))
+		{
+			if(dis2<dis1&& !collisionmaze(dir2,maze) && !collision(dir2,snake)&& wallcollision(dir2))
+			{
+				if(dis3<dis2 && !collisionmaze(dir3,maze) && !collision(dir3,snake)&& wallcollision(dir3))
+				{
+					if(dis4<dis3 && d!='DOWN'&& !collisionmaze(dir4,maze) && !collision(dir4,snake)&& wallcollision(dir4))
+						return "UP";
+					else 
+						return 'DOWN'
+				}else
+				return'RIGHT';
+			}else
+			return "LEFT";
+		}else if(dis2<initialdis&& !collisionmaze(dir2,maze) && !collision(dir2,snake)&& wallcollision(dir2))
+		{
+			if(dis3<dis2&& d!='UP'&& !collisionmaze(dir3,maze) && !collision(dir3,snake)&& wallcollision(dir3))
+			{
+				if(dis4<dis3 && d!='DOWN'&& !collisionmaze(dir4,maze) && !collision(dir4,snake)&& wallcollision(dir4))
+				{
+					return "UP";
+				}else
+				return'DOWN';
+			}else
+			return "RIGHT";
+		}
+		else if(dis3<initialdis&& !collisionmaze(dir3,maze) && !collision(dir3,snake)&& wallcollision(dir3))
+		{
+			if(dis4<dis3 && d!="DOWN"&& !collisionmaze(dir4,maze) && !collision(dir4,snake)&& wallcollision(dir4))
+			{
+				return 'UP';
+			}else
+			return "DOWN";
+		}
+		else if(dis4<initialdis&& !collisionmaze(dir4,maze) && !collision(dir4,snake)&& wallcollision(dir4))
+		{
+			return 'UP';
+		}else if ( !collisionmaze(dir1,maze) && !collision(dir1,snake) && d!='RIGHT'&& wallcollision(dir1))
+		{
+			return "LEFT";
+		}else if ( !collisionmaze(dir2,maze) && !collision(dir2,snake) && d!='LEFT'&& wallcollision(dir2))
+		{
+			return "RIGHT";
+		}
+	
+		else if ( !collisionmaze(dir3,maze) && !collision(dir3,snake)&& d!='UP'&& wallcollision(dir3))
+		{
+			return "DOWN";
+		}
+	
+		else if ( !collisionmaze(dir4,maze) && !collision(dir4,snake)&& d!='DOWN'&& wallcollision(dir4))
+		{
+			return "UP";
+		}else if ( !collisionmaze(dir3,maze) && !collision(dir3,snake)&& d!='UP'&& wallcollision(dir3))
+		{
+			return "DOWN";
+		}else if ( !collisionmaze(dir2,maze) && !collision(dir2,snake)&& d!='LEFT'&& wallcollision(dir2))
+		{
+			return "RIGHT";
+		}
+		else if ( !collisionmaze(dir1,maze) && !collision(dir1,snake)&& d!='RIGHT'&& wallcollision(dir1))
+		{
+			return "LEFT";
+		}
+
+
+		
+
+
+			
+	
+	
+}
 // chech that the food do not overlap with maze
  function checkfood(food,array)
  {
  	for( i = 0 ;i<41;i++)
  	{
- 		if(food.x==array[i].x && food.y == array[i].y || food.y == array[i].x && food.x == array[i].y)
+ 		if(food.x==array[i].x && food.y == array[i].y )
  			return true;
  	}
  	return false;
  }
+ // checking if the food cordinates are on any part of the snake when new food is created 
+  function checkfoodonsnake(food,array)
+ {
+ 	for( i = 0 ;i<array.length;i++)
+ 	{
+ 		if(food.x==array[i].x && food.y == array[i].y )
+ 			return true;
+ 	}
+ 	return false;
+ }
+
 
 // check the collision of snake with it's own body
 function collision(head,array)
@@ -310,13 +477,29 @@ function collisionmaze(head,maze)
 
 	return false;
 }
+// function to make the game autonomous
+function changetoauto()
+{
+	let btn = document.getElementById('changetoauto');
+	if(btn.className==='manual')
+	{
+		btn.className='auto';
+		alert("autonomous play is recommended without maze!!!<br> due to some issues however you can change the maze accordig to you wish");
+		let mazebtn = document.getElementById('mazebutton');
+		mazebtn.className='rotate4';
+		changeMaze();
 
+	}
+	else
+		btn.className='manual';
+}
 // just a variable to avoid maze change when the game is over
 let gamestatus =1 
 
 // draw everything on the screen
 
 let foodpos;
+let foodpos2;
 function draw(){
 	ctx.drawImage(ground,0,0);
 
@@ -324,7 +507,7 @@ function draw(){
 	{
 		ctx.fillStyle=i==0?snakeheadcolor:"white";
 		ctx.fillRect(snake[i].x,snake[i].y,box,box);
-		ctx.strokeStyle = 'white';
+		ctx.strokeStyle = snakeheadcolor;
 		ctx.strokeRect(snake[i].x,snake[i].y,box,box);
 	}
 
@@ -333,6 +516,9 @@ function draw(){
 	let snakeY = snake[0].y;
 
 	// remove the tail
+	let autostatus = document.getElementById('changetoauto');
+	if(autostatus.className==='auto')
+		d=autonomous(food,snakeX,snakeY);
 
 	if(d == "LEFT") snakeX -=box;
 	if(d == "UP") snakeY -=box;
@@ -343,6 +529,7 @@ function draw(){
 	if(snakeX==food.x && snakeY== food.y)
 	{
 		score++;
+		speed++;
 		eat.play();
 		food = {
 			x:Math.floor(Math.random()*17+1)*box ,
@@ -366,8 +553,9 @@ function draw(){
 	}
 	
 	foodpos = checkfood(food,maze);
+	foodpos2 = checkfoodonsnake(food,snake);
 
-		while(foodpos==true)
+		while(foodpos==true || foodpos2==true)
 		{
 			
 			food={
@@ -378,16 +566,17 @@ function draw(){
 		}
 
 	snake.unshift(newhead);
-
 	ctx.drawImage(foodImg,food.x,food.y);
 	ctx.fillStyle = "white";
 	ctx.font = "35px Changa one";
 	ctx.fillText(score,(2.5)*box,1.6*box);
 	ctx.fillstyle = "blue";
 	ctx.font = "35px Changa one";
-	// ctx.fillText("speed",5*box, 1.6*box);
-	// ctx.fillText(Number(document.getElementById('speedbutton').value), 8*box , 1.6*box);
+	 let currentspeed = 3200/(120-speed);
+	 ctx.fillText("speed",5*box, 1.6*box);
+	
+	ctx.fillText(String(currentspeed.toPrecision(4))+'px/ms', 8*box , 1.6*box);
 }
 
-let game = setInterval(draw,120);
-let Maze = setInterval(drawmaze,120);
+let game = setInterval(draw,120-speed);
+let Maze = setInterval(drawmaze,120-speed);
