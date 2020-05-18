@@ -333,7 +333,7 @@ function wallcollision(dir)
 	else
 		return true;
 }
-// making the game autonomous 
+// making the game autonomous in maze mode 
 
 function autonomous(food,snakeX,snakeY)
 {
@@ -424,13 +424,106 @@ function autonomous(food,snakeX,snakeY)
 		{
 			return "LEFT";
 		}
-
-
-		
-
-
-			
 	
+}
+// autonomous gameplay without maze 
+function autonomouswithoumaze(food,snakeX,snakeY)
+{
+	
+		let dir1 = {
+			x:snakeX-1*box,
+			y:snakeY
+		}
+		if(!wallcollision(dir1))
+			dir1=MAX_SAFE_INTERGER;
+		let dir2 = {
+			x:snakeX+1*box,
+			y:snakeY
+		}
+		if(!wallcollision(dir2))
+			dir2=MAX_SAFE_INTERGER;
+		let dir3 = {
+			x:snakeX,
+			y:snakeY+1*box
+		}
+		if(!wallcollision(dir3))
+			dir3=MAX_SAFE_INTERGER;
+		let dir4 = {
+			x:snakeX,
+			y:snakeY-box
+		}
+		if(!wallcollision(dir4))
+			dir4=MAX_SAFE_INTERGER;
+		let initialdis =Math.abs(food.x-snakeX)+Math.abs(food.y-snakeY);
+		let dis1 = (Math.abs(food.x-dir1.x)+Math.abs(food.y-dir1.y));
+		let dis2 = (Math.abs(food.x-dir2.x)+Math.abs(food.y-dir2.y));
+		let dis3 = (Math.abs(food.x-dir3.x)+Math.abs(food.y-dir3.y));
+		let dis4 = (Math.abs(food.x-dir4.x)+Math.abs(food.y-dir4.y));
+
+		if(dis1<initialdis &&!collision(dir1,snake))
+		{
+			if(dis2<dis1&&!collision(dir2,snake))
+			{
+				if(dis3<dis2 &&  !collision(dir3,snake))
+				{
+					if(dis4<dis3 && d!='DOWN'&& !collision(dir4,snake))
+						return "UP";
+					else 
+						return 'DOWN'
+				}else
+				return'RIGHT';
+			}else
+			return "LEFT";
+		}else if(dis2<initialdis&&  !collision(dir2,snake))
+		{
+			if(dis3<dis2&& d!='UP'&&  !collision(dir3,snake))
+			{
+				if(dis4<dis3 && d!='DOWN'&&  !collision(dir4,snake))
+				{
+					return "UP";
+				}else
+				return'DOWN';
+			}else
+			return "RIGHT";
+		}
+		else if(dis3<initialdis&&  !collision(dir3,snake))
+		{
+			if(dis4<dis3 && d!="DOWN"&&  !collision(dir4,snake))
+			{
+				return 'UP';
+			}else
+			return "DOWN";
+		}
+		else if(dis4<initialdis&&  !collision(dir4,snake))
+		{
+			return 'UP';
+		}else if (  !collision(dir1,snake) && d!='RIGHT')
+		{
+			return "LEFT";
+		}else if (  !collision(dir2,snake) && d!='LEFT')
+		{
+			return "RIGHT";
+		}
+	
+		else if (  !collision(dir3,snake)&& d!='UP')
+		{
+			return "DOWN";
+		}
+	
+		else if (  !collision(dir4,snake)&& d!='DOWN')
+		{
+			return "UP";
+		}else if (  !collision(dir3,snake)&& d!='UP')
+		{
+			return "DOWN";
+		}else if (  !collision(dir2,snake)&& d!='LEFT')
+		{
+			return "RIGHT";
+		}
+		else if (  !collision(dir1,snake)&& d!='RIGHT')
+		{
+			return "LEFT";
+		}
 	
 }
 // chech that the food do not overlap with maze
@@ -516,9 +609,16 @@ function draw(){
 	let snakeY = snake[0].y;
 
 	// remove the tail
+	let mazebtn = document.getElementById('mazebutton');
 	let autostatus = document.getElementById('changetoauto');
 	if(autostatus.className==='auto')
-		d=autonomous(food,snakeX,snakeY);
+	{
+		if(mazebtn.className==='rotate4')
+			d=autonomouswithoumaze(food,snakeX,snakeY);// if the auto play  is without maze then we shift to a low calculation function
+		// to increase efficiency
+		else 
+			d=autonomous(food,snakeX,snakeY);// else wiht maze we have  to use a heavy , less efficient funcion
+	}
 
 	if(d == "LEFT") snakeX -=box;
 	if(d == "UP") snakeY -=box;
