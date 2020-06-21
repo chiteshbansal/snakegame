@@ -694,19 +694,19 @@ let speeddecreaseBtn = document.getElementById('decrease');
 let currentspeedscreen = document.getElementById('currentSpeed');
 
 speedincreaseBtn.onclick = function(){
-	speed++;
+	speed+=20;
 	let currentspeed = 3200/(120-speed);
 	let speedinpx = String(currentspeed.toPrecision(4))+'px/ms';
 	currentspeedscreen.innerText = speedinpx;
 } 
 
 speeddecreaseBtn.onclick = function(){
-	speed--;
+	speed-=20;
 	let currentspeed = 3200/(120-speed);
 	let speedinpx = String(currentspeed.toPrecision(4))+'px/ms';
 	currentspeedscreen.innerText = speedinpx;
 } 
 
 
-let game = setInterval(draw,120-speed);
-let Maze = setInterval(drawmaze,120-speed);
+let game = setInterval(draw,200-speed);
+let Maze = setInterval(drawmaze,200-speed);
