@@ -10,6 +10,7 @@
 
 body{
 	background-image: linear-gradient(to right,darkgreen , yellowgreen , lightgreen, green , yellow, white);
+	overflow-x: hidden;
 }
 
 h1{
@@ -86,18 +87,23 @@ section div button i{
 }
 
 
-@media screen and (max-width: 800px)
+@media screen and (max-width: 1000px)
 {
 	section{
 		width: 80%;
+		left: 0;
+		position: absolute;
 	}
-	.btncontainer{
-		flex-direction: row;
-		justify-content: flex-start;
-		width: 100%;
+	div.btncontainer{
+		width: 20%;
+		position: absolute;
+		right: 0%;
+		flex-direction: column;
+		justify-content: space-around;
+		/*width: 100%;*/
 	}
 
-	.btncontainer button{
+	div.btncontainer button{
 		width: 100%;
 	}
 }
@@ -107,23 +113,53 @@ section div button i{
 	section{
 		width: 100%;
 	}
-	.btncontainer{
-		flex-direction: row;
-		justify-content: flex-start;
-		width: 100%;
+	div.btncontainer{
+		flex-direction: column;
+		/*justify-content: flex-start;*/
+		right: 3%;
+		width: 50%;
+		/*width: 100%;*/
 	}
 
-	.btncontainer button{
+	.btncontainer >button{
 		display: inline-block;
-		width: 100%;
+		/*width: 100%;*/
+		/*width:5%; */
+		text-align: left;
+		transform: translateX(100%);
+		transition: .4s linear;
+		overflow: hidden;
+	}
+	.btncontainer> button:hover{
+		transform: translateX(10%);
+		/*width: 100%;*/
+		color: red;
+	}
+	.btncontainer .speedControl{
+		transform: translateX(98%);
+		/*width: 5%;*/
+		flex-direction: column;
+		flex-wrap: wrap;
+		overflow: hidden;
+		transition: .4s linear;
+	}
+
+	.btncontainer .speedControl:hover{
+		transform: translateX(0%);
 	}
 }
 
 .btncontainer{
-	width: 40%;
+	width: 10%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
+	position: absolute;
+	top: 52%;
+	right: 7%;
+	/*transform: rotateZ(90deg);*/
+	flex-direction: row;
+	/*flex-wrap: wrap;*/
 	margin:0 auto;
 
 	justify-content: center;
