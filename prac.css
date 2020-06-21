@@ -70,6 +70,21 @@ section div button i{
 	}
 }
 
+.speedControl{
+	display: flex;
+
+}
+
+#currentSpeed{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	box-shadow: inset 4px 4px 4px rgba(0,0,0,0.5);
+	padding: .2rem .5rem;
+	font-weight: bold;
+}
+
 
 @media screen and (max-width: 800px)
 {
@@ -121,7 +136,7 @@ section div button i{
 	background-color: black;
 	color: white;
 	font-family: cursive;
-	font-size: 2rem;
+	font-size: 1rem;
 }
 
 

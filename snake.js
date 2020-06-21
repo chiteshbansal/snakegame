@@ -577,7 +577,7 @@ function changetoauto()
 	if(btn.className==='manual')
 	{
 		btn.className='auto';
-		alert("autonomous play is recommended without maze!!! due to some issues however you can change the maze accordig to you wish");
+		// alert("autonomous play is recommended without maze!!! due to some issues however you can change the maze accordig to you wish");
 		let mazebtn = document.getElementById('mazebutton');
 		mazebtn.className='rotate4';
 		changeMaze();
@@ -640,7 +640,7 @@ function draw(){
 	if(snakeX==food.x && snakeY== food.y)
 	{
 		score++;
-		speed++;
+		// speed++;
 		eat.play();
 		food = {
 			x:Math.floor(Math.random()*17+1)*box ,
@@ -688,6 +688,25 @@ function draw(){
 	
 	ctx.fillText(String(currentspeed.toPrecision(4))+'px/ms', 8*box , 1.6*box);
 }
+
+let speedincreaseBtn =document.getElementById('increase');
+let speeddecreaseBtn = document.getElementById('decrease');
+let currentspeedscreen = document.getElementById('currentSpeed');
+
+speedincreaseBtn.onclick = function(){
+	speed++;
+	let currentspeed = 3200/(120-speed);
+	let speedinpx = String(currentspeed.toPrecision(4))+'px/ms';
+	currentspeedscreen.innerText = speedinpx;
+} 
+
+speeddecreaseBtn.onclick = function(){
+	speed--;
+	let currentspeed = 3200/(120-speed);
+	let speedinpx = String(currentspeed.toPrecision(4))+'px/ms';
+	currentspeedscreen.innerText = speedinpx;
+} 
+
 
 let game = setInterval(draw,120-speed);
 let Maze = setInterval(drawmaze,120-speed);
